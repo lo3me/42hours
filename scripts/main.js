@@ -2,7 +2,7 @@
  * Delay to start calculating since there might be
  * a lazy load process to load the hours
  */
-const delay = 500
+const delay = 400
 
 /**
  * Calculates the sum of hours of each month
