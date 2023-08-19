@@ -57,7 +57,7 @@ function displayHours(monthLabels, monthSums) {
 	monthLabels.forEach(label => {
 		const hour = label.cloneNode(true)
 		hour.setAttribute("y", (parseInt(hour.getAttribute("y")) + 12).toString())
-		hour.setAttribute("x", (parseInt(hour.getAttribute("x")) - 6).toString())
+		hour.setAttribute("x", (parseInt(hour.getAttribute("x")) - 9).toString())
 		hour.style.fill = "#007B7C";
 		hour.style.fontWeight = 700;
 		hour.textContent = monthSums[label.textContent.trim()] + "h"
