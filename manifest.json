@@ -20,7 +20,8 @@
 				"scripts/main.js"
 			],
 			"matches": [
-				"*://profile.intra.42.fr/"
+				"*://profile.intra.42.fr/",
+				"*://profile.intra.42.fr/users/*"
 			]
 		}
 	]
