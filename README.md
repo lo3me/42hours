@@ -1,5 +1,7 @@
 # 42hours
-Chrome extension to show your intra log hours per month
+Chrome extension to show your intra log hours per month.
+
+[Download](https://chrome.google.com/webstore/detail/42hours/lhkgfieifpbhhcoemgchgknchfojiibn) from Chrome Web Store
 
 ![profile log time hours](./images/screenshot.png)
 
