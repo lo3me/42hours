@@ -1,10 +1,4 @@
 /**
- * Delay to start calculating since there might be
- * a lazy load process to load the hours
- */
-const delay = 400
-
-/**
  * Calculates the sum of hours of each month
  * @param {HTMLElement[]} monthLabels
  * @returns {Object}
@@ -27,7 +21,7 @@ function calcHours(monthLabels) {
 			currentMonthLabel = monthName;
 		} else if (tagName === 'g') {
 			if (currentMonthLabel !== null) {
-			months[currentMonthLabel].push(element);
+				months[currentMonthLabel].push(element);
 			}
 		}
 	});
@@ -74,4 +68,21 @@ function task() {
 	displayHours(monthLabels, monthSums);
 }
 
-setTimeout(task, delay);
+/**
+ * 
+ * @param {HTMLElement} parent The parent element of the target
+ * @param {string} childQS The target query selector to be observed
+ * @param {function(void): void} callback Gets called whenever the target is visible
+ */
+function respondToVisibility(parent, childQS, callback) {
+	var observer = new MutationObserver((mutations) => {
+		const record = mutations[0]
+		if (record.type == "childList" && parent.querySelectorAll(childQS).length > 0) {
+			callback();
+			observer.disconnect();
+		}
+	});
+	observer.observe(parent, { childList: true });
+}
+
+respondToVisibility(document.getElementById("user-locations"), "svg g rect[fill]", task);
