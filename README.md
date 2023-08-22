@@ -9,6 +9,7 @@ Chrome extension to show your intra log hours per month.
 Script by https://github.com/AzerSD/42_logtime
 
 # Todo
+- [ ] Support for other browsers
 - [ ] Rewrite in TypeScript
 
 # Notes
